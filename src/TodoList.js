@@ -36,19 +36,29 @@ const TodoList = () => {
           value={activity}
           onChange={(e) => setactivity(e.target.value)}
         />
-        <button onClick={addactivity} className="addbutton">Add +</button>
+        <button onClick={addactivity} className="addbutton">
+          Add +
+        </button>
         <p className="list-heading">Here is your List :{")"}</p>
-        {listData!=[] && listData.map((data,i)=>{
-          return(
-            <>
-            <p key={i} className="listdata">
-              <div className="listdata">{data}</div>
-              <button onClick={()=>removeActivity(i)} className="removebutton" >Remove(-)</button>
-            </p>
-            </>
-          )
-        })}
-        <button onClick={()=>removeall()} className="removeallbutton" >RemoveAll(-)</button>
+        {listData != [] &&
+          listData.map((data, i) => {
+            return (
+              <>
+                <p key={i} className="listdata">
+                  <div className="listdata">{data}</div>
+                  <button
+                    onClick={() => removeActivity(i)}
+                    className="removebutton"
+                  >
+                    Remove(-)
+                  </button>
+                </p>
+              </>
+            );
+          })}
+        <button onClick={() => removeall()} className="removeallbutton">
+          RemoveAll(-)
+        </button>
       </div>
     </>
   );
